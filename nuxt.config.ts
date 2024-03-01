@@ -1,15 +1,21 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: "Martin's Nuxt Starter",
+      title: "Hackathon 2024",
     },
   },
 
-  modules: ['@formkit/nuxt', '@nuxtjs/tailwindcss', '@vueuse/nuxt', 'nuxt-lodash', 'nuxt-headlessui'],
-  css: ['@/assets/scss/main.scss'],
+  modules: [
+    "@formkit/nuxt",
+    "@nuxtjs/tailwindcss",
+    "@vueuse/nuxt",
+    "nuxt-lodash",
+    "nuxt-headlessui",
+  ],
+  css: ["@/assets/scss/main.scss"],
 
   tailwindcss: {
-    cssPath: '@/assets/scss/main.scss',
+    cssPath: "@/assets/scss/main.scss",
     viewer: false,
   },
 
@@ -18,7 +24,7 @@ export default defineNuxtConfig({
    * @see https://nuxt.com/modules/lodash
    */
   lodash: {
-    prefix: '_',
+    prefix: "_",
     upperAfterPrefix: false,
   },
 
@@ -27,7 +33,7 @@ export default defineNuxtConfig({
    * @see https://nuxt.com/modules/headlessui
    */
   headlessui: {
-    prefix: 'Headless',
+    prefix: "Headless",
   },
 
   devtools: {
@@ -44,4 +50,4 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-})
+});
