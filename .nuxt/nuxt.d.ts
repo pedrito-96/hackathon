@@ -4,6 +4,7 @@
 /// <reference types="@vueuse/nuxt" />
 /// <reference types="nuxt-lodash" />
 /// <reference types="nuxt-headlessui" />
+/// <reference types="nuxt-icons" />
 /// <reference types="@nuxt/devtools" />
 /// <reference types="@nuxt/telemetry" />
 /// <reference types="nuxt" />

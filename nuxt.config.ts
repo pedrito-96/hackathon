@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "nuxt-lodash",
     "nuxt-headlessui",
+    "nuxt-icons",
   ],
   css: ["@/assets/scss/main.scss"],
 
