@@ -4,15 +4,5 @@ const v = ref("");
 </script>
 
 <template>
-  <MoleculesTextInput
-    label="label"
-    placeholder="placeholder"
-    @onEnter="
-      (value) => {
-        console.log(value);
-        v = value;
-      }
-    "
-  />
-  <div v-if="v" class="bg-black text-white">{{ v }}</div>
+  <MoleculesFavourite />
 </template>
