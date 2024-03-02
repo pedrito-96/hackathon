@@ -7,12 +7,12 @@ export default defineEventHandler(async (event) => {
 
   // 2a chiamata post
   const addMessage = await $fetch(
-    `https://api.openai.com/v1/threads/thread_hjypMLPlLhV8LGJmCE5y3rjH/messages`,
+    `https://api.openai.com/v1/threads/thread_VbsjzzAenzn1urpk9w4RlYoN/messages`,
     {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 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 `,
+        Authorization: `Bearer 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`,
         "OpenAI-Beta": "assistants=v1",
       },
       body: {
@@ -22,16 +22,16 @@ export default defineEventHandler(async (event) => {
     }
   );
   const runMessage = await $fetch(
-    `https://api.openai.com/v1/threads/thread_hjypMLPlLhV8LGJmCE5y3rjH/runs`,
+    `https://api.openai.com/v1/threads/thread_VbsjzzAenzn1urpk9w4RlYoN/runs`,
     {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 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 `,
+        Authorization: `Bearer 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`,
         "OpenAI-Beta": "assistants=v1",
       },
       body: {
-        assistant_id: "asst_TnZhAQ4lBnBODtjVYcKLDg9I",
+        assistant_id: "asst_Uqa92AhXwpR0HydrOqOUmQap",
       },
     }
   );
@@ -39,16 +39,16 @@ export default defineEventHandler(async (event) => {
     setTimeout(() => {
       console.log("aspetto");
       resolve(null);
-    }, 5000);
+    }, 3000);
   });
 
   const getStatus = await $fetch(
-    `https://api.openai.com/v1/threads/thread_hjypMLPlLhV8LGJmCE5y3rjH/runs/${runMessage.id}`,
+    `https://api.openai.com/v1/threads/thread_VbsjzzAenzn1urpk9w4RlYoN/runs/${runMessage.id}`,
     {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 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 `,
+        Authorization: `Bearer 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`,
         "OpenAI-Beta": "assistants=v1",
       },
     }
@@ -57,12 +57,12 @@ export default defineEventHandler(async (event) => {
   if (getStatus.status === "completed") {
     console.log("complete");
     const response = await $fetch(
-      `https://api.openai.com/v1/threads/thread_hjypMLPlLhV8LGJmCE5y3rjH/messages`,
+      `https://api.openai.com/v1/threads/thread_VbsjzzAenzn1urpk9w4RlYoN/messages`,
       {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer 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 `,
+          Authorization: `Bearer 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`,
           "OpenAI-Beta": "assistants=v1",
         },
       }
