@@ -8,7 +8,9 @@ const addImg = ref(false);
 <template>
   <div class="flex justify-start items-center h-screen w-screen p-[10%]">
     <a href="/">
-      <img src="../Icons/reask.svg" class="absolute top-[10%] left-[10%] z-50"
+      <img
+        src="../Icons/retex.png"
+        class="absolute top-[10%] left-[10%] w-[61px] h-[73px] z-50"
     /></a>
     <div class="flex justify-center items-center">
       <div

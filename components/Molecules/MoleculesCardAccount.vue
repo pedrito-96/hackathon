@@ -6,7 +6,7 @@
       <img src="/lello.png" class="h-[221px] w-[221px] rounded-lg" />
     </div>
     <p class="py-7 text-center text-bold text-[14px]">
-      Ciao sono il tuo Buddy Antonello Carino,pm di Atoms
+      Ciao sono il tuo Buddy Antonello Carino, PM di Atoms
     </p>
     <div class="w-full flex justify-center">
       <div class="bg-black text-center p-2 w-fit">

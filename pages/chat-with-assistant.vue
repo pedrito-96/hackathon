@@ -55,7 +55,10 @@ const answer = ref("dasoidjasodijass");
 <template>
   <div class="boom flex justify-center items-center h-screen w-screen p-[10%]">
     <a href="/">
-      <img src="../Icons/reask.svg" class="absolute top-[10%] left-[10%]" />
+      <img
+        src="../Icons/retex.png"
+        class="absolute top-[10%] left-[10%] w-[61px] h-[73px]"
+      />
     </a>
     <div
       class="flex flex-col bg-black/10 rounded-lg w-full h-full gap-4 p-8 overflow-auto"
