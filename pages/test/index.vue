@@ -1,16 +1,16 @@
 <script setup lang="ts">
 const lista = [
-  { title: "tile", image: "/placeholderImage.png" },
-  { title: "tile", image: "/placeholderImage.png" },
-  { title: "tile", image: "/placeholderImage.png" },
-  { title: "tile", image: "/placeholderImage.png" },
-  { title: "tile", image: "/placeholderImage.png" },
-  { title: "tile", image: "/placeholderImage.png" },
-  { title: "tile", image: "/placeholderImage.png" },
-  { title: "tile", image: "/placeholderImage.png" },
+  { title: "tile", content: "/placeholderImage.png" },
+  { title: "tile", content: "/placeholdercontent.png" },
+  { title: "tile", content: "/placeholdercontent.png" },
+  { title: "tile", content: "/placeholdercontent.png" },
+  { title: "tile", content: "/placeholdercontent.png" },
+  { title: "tile", content: "/placeholdercontent.png" },
+  { title: "tile", content: "/placeholdercontent.png" },
+  { title: "tile", content: "/placeholderImage.png" },
 ];
 </script>
 
 <template>
-  <MoleculesAccordion title="titolo" content="contenuto" />
+  <OrganismsAccordionList :list="lista" />
 </template>

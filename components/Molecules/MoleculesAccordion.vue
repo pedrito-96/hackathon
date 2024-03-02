@@ -5,7 +5,9 @@ defineProps<AccordionProps>();
 
 <template>
   <Disclosure>
-    <DisclosureButton class="text-black font-semibold text-[24px] py-2">
+    <DisclosureButton
+      class="text-black font-semibold text-[24px] py-2 hover:text-[32px] hover:font-bold"
+    >
       {{ title }}
     </DisclosureButton>
     <DisclosurePanel class="text-black text-[24px]">
