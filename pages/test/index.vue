@@ -1,8 +1,16 @@
 <script setup lang="ts">
-import { ref } from "vue";
-const v = ref("");
+const lista = [
+  { title: "tile", image: "/placeholderImage.png" },
+  { title: "tile", image: "/placeholderImage.png" },
+  { title: "tile", image: "/placeholderImage.png" },
+  { title: "tile", image: "/placeholderImage.png" },
+  { title: "tile", image: "/placeholderImage.png" },
+  { title: "tile", image: "/placeholderImage.png" },
+  { title: "tile", image: "/placeholderImage.png" },
+  { title: "tile", image: "/placeholderImage.png" },
+];
 </script>
 
 <template>
-  <MoleculesFavourite />
+  <OrganismsCardList :list="lista" />
 </template>
