@@ -26,11 +26,13 @@ const addImg = ref(false);
             sei già dipendente?
           </button>
         </div>
-        <button
-          class="absolute bottom-[10%] right-0 px-6 py-8 text-[16px] bg-[#48A8D4] text-white"
-        >
-          Ti aiutiamo noi ... (Live chat)
-        </button>
+        <a href="/chat-with-assistant">
+          <button
+            class="absolute bottom-[10%] right-0 px-6 py-8 text-[16px] bg-[#48A8D4] text-white"
+          >
+            Ti aiutiamo noi ... (Live chat)
+          </button>
+        </a>
       </div>
       <!-- <div>
         <img
