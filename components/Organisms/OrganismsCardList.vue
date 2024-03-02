@@ -7,7 +7,7 @@ defineProps<CardListProps>();
   <div class="flex gap-4 overflow-hidden overflow-x-auto hide-scroll">
     <div
       v-for="card in list"
-      class="first:ml-[100px] first:xl:ml-[135px] last:mr-[100px] last:xl:mr-[135px]"
+      class="first:ml-[100px] first:xl:ml-[135px] last:mr-[100px] last:xl:mr-[135px] h-[220px] w-[265px]"
     >
       <MoleculesCard v-bind="card" class="h-[220px] w-[265px]" />
     </div>

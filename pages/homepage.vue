@@ -41,7 +41,7 @@ const fav = [
 const imgs = [
   {
     title: "Il tuo ufficio",
-    image: "/placeholderImage.png",
+    image: "/office.png",
   },
   {
     title: "Il tuo team",
@@ -57,7 +57,7 @@ const imgs = [
   },
   {
     title: "Le tue pausePl",
-    image: "/placeholderImage.png",
+    image: "/office.png",
   },
 ];
 const isClicked = ref(false);
