@@ -6,7 +6,7 @@ defineProps<OrganismsHeaderProps>();
   <div class="boom bg-[#F2FDFF] px-[135px] py-14 flex flex-col gap-y-12">
     <div class="flex justify-between items-center">
       <a href="/homepage"
-        ><img src="/icons/retex.png" class="w-[61px] h-[73px]"
+        ><img src="/Icons/retex.png" class="w-[61px] h-[73px]"
       /></a>
       <p>Venistar, Pianiga</p>
       <div class="flex justify-center items-center gap-4">
