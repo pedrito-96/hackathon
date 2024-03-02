@@ -1,9 +1,13 @@
+<script setup lang="ts">
+definePageMeta({
+  layout: false,
+});
+
+const addImg = ref(false);
+</script>
 <template>
   <div class="flex justify-center items-center h-screen w-screen p-[10%]">
-    <img
-      src="/assets/icons/reaskLogo.svg"
-      class="absolute top-[10%] left-[10%]"
-    />
+    <img src="../Icons/reaskLogo.svg" class="absolute top-[10%] left-[10%]" />
     <div class="flex items-center">
       <div class="boom w-full h-full">
         <p class="text-[30px] pb-11 font-bold">ciao Retexer,</p>
@@ -12,6 +16,7 @@
         <div class="flex gap-x-[34px] pt-16">
           <button
             class="uppercase px-4 py-[9px] text-[16px] bg-black text-white"
+            @click="navigateTo('/login')"
           >
             sei nuovo?
           </button>
@@ -30,11 +35,22 @@
       <!-- <div>
         <img
           v-if="addImg"
-          src="/assets/lombiCircle.png"
+          src="../Icons/lombiCircle.png"
           @click="() => (addImg = false)"
         />
-        <img v-else src="/assets/addImg.png" @click="() => (addImg = true)" />
+        <img v-else src="../Icons/addImg.png" @click="() => (addImg = true)" />
       </div> -->
     </div>
   </div>
 </template>
+<style lang="scss">
+.boom {
+  /* Background pattern from Toptal Subtle Patterns */
+  background-image: url("/public/fade.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  width: 100%;
+  height: 100%;
+}
+</style>
