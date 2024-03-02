@@ -1,64 +1,7 @@
-<script setup lang="ts">
-definePageMeta({
-  layout: false,
-});
-
-const addImg = ref(false);
-</script>
 <template>
-  <div class="flex justify-center items-center h-screen w-screen p-[10%]">
-    <img
-      src="/assets/icons/reaskLogo.svg"
-      class="absolute top-[10%] left-[10%]"
-    />
-    <div class="flex items-center">
-      <div class="boom w-full h-full">
-        <p class="text-[30px] pb-11 font-bold">ciao Retexer,</p>
-        <p class="text-[44px] font-bold">Sei nel luogo ideale per lavorare,</p>
-        <p class="text-[44px] font-bold">imparare e divertirti</p>
-        <div class="flex gap-x-[34px] pt-16">
-          <button
-            class="uppercase px-4 py-[9px] text-[16px] bg-black text-white"
-          >
-            sei nuovo?
-          </button>
-          <button
-            class="uppercase px-4 py-[9px] text-[16px] bg-black text-white"
-          >
-            sei già dipendente?
-          </button>
-        </div>
-      </div>
-      <!-- <div>
-        <img
-          v-if="addImg"
-          src="/assets/lombiCircle.png"
-          @click="() => (addImg = false)"
-        />
-        <img v-else src="/assets/addImg.png" @click="() => (addImg = true)" />
-      </div> -->
-    </div>
+  <div class="max-w-md space-y-2">
+    <Disclosure title="Lorem ipsum dolor sit amet" text="Dolore officia ab impedit iste non illo itaque quos nesciunt modi adipisci, odit aperiam nemo, est tenetur reiciendis, maiores repellendus." />
+
+    <Card title="Is your dog older than you?" />
   </div>
 </template>
-<style lang="scss">
-.boom {
-  /* Background pattern from Toptal Subtle Patterns */
-  background-image: url("/assets/fade.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: left;
-  width: 100%;
-  height: 100%;
-}
-
-.circle {
-  background: black;
-  width: 275px;
-  height: 275px;
-  padding: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-</style>
