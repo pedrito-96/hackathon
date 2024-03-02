@@ -6,9 +6,9 @@ definePageMeta({
 
 <template>
   <div class="py-[78px] px-[100px] xl:px-[135px]">
-    <div class="flex gap-12 justify-between w-full pb-[50px] xl:pb-[120px]">
+    <div class="flex gap-12 justify-between w-full pb-[20px] xl:pb-[120px]">
       <div class="container-sinistro">
-        <p class="font-bold pb-8 text-[32px]">Ciao giovanni</p>
+        <p class="font-bold pb-8 text-[32px]">Ciao Giovanni,</p>
         <p class="pb-8 text-[16px] pb-10">
           Scommetto che non sai da che parte girati, non ti preoccupare, siamo
           qui apposta per aiutarti. Troverai tutte le risposte che cerchi e se
