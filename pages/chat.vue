@@ -3,12 +3,12 @@ definePageMeta({
   layout: false,
 });
 const response = ref([]);
-const answer = ref([]);
-const handleEnter = async (value: string) => {
+
+const handleEnter = async (input: string) => {
   const res = await $fetch("/api/chat", {
     method: "POST",
     body: {
-      text: value,
+      text: input,
     },
   });
 
@@ -21,7 +21,7 @@ const handleEnter = async (value: string) => {
 <template>
   <div class="boom flex justify-center items-center h-screen w-screen p-[10%]">
     <a href="/">
-      <img src="../../Icons/reask.svg" class="absolute top-[10%] left-[10%]" />
+      <img src="../Icons/reask.svg" class="absolute top-[10%] left-[10%]" />
     </a>
     <div
       class="flex flex-col bg-black/10 rounded-lg w-full h-full gap-4 px-8 pt-8 pb-10 overflow-auto"
