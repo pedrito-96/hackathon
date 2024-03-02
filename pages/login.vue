@@ -8,7 +8,7 @@ const addImg = ref(false);
 <template>
   <div class="flex justify-start items-center h-screen w-screen p-[10%]">
     <img
-      src="../Icons/reaskLogo.svg"
+      src="../Icons/reask.svg"
       class="absolute top-[10%] left-[10%]"
       @click="navigateTo('/')"
     />
@@ -31,7 +31,11 @@ const addImg = ref(false);
           placeholder="Password"
           :icon="false"
         />
-        <button class="self-end px-12 py-[9px] text-[16px] bg-black text-white">
+
+        <button
+          class="self-end px-12 py-[9px] text-[16px] bg-black text-white"
+          @click="navigateTo('/homepage')"
+        >
           Accedi
         </button>
       </div>
