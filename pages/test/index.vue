@@ -12,5 +12,5 @@ const lista = [
 </script>
 
 <template>
-  <OrganismsCardList :list="lista" />
+  <MoleculesAccordion title="titolo" content="contenuto" />
 </template>

@@ -8,6 +8,8 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Disclosure: typeof import('@headlessui/vue')['Disclosure']
+    DisclosureButton: typeof import('@headlessui/vue')['DisclosureButton']
+    DisclosurePanel: typeof import('@headlessui/vue')['DisclosurePanel']
     IconsSearch: typeof import('~icons/icons/search')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
