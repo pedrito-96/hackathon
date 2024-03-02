@@ -3,15 +3,17 @@ definePageMeta({
   layout: false,
 });
 const response = ref([]);
-
+const isLoading = ref(false);
 const handleEnter = async (input: string) => {
+  console.log(isLoading.value);
+  isLoading.value = true;
   const res = await $fetch("/api/chat", {
     method: "POST",
     body: {
       text: input,
     },
   });
-
+  isLoading.value = false;
   response.value = res.response.data
     .toReversed()
     .map((i) => i.content[0].text.value);
@@ -29,10 +31,16 @@ const handleEnter = async (input: string) => {
     <div
       class="flex flex-col bg-black/10 rounded-lg w-full h-full gap-4 px-8 pt-8 pb-10 overflow-auto"
     >
-      <div v-for="(res, index) in response" class="last:pb-10">
+      <div
+        v-if="isLoading"
+        class="relative p-4 bg-white ml-[60%] justify-end rounded-lg w-5/12 flex items-center"
+      >
+        <p>...</p>
+      </div>
+      <div v-else v-for="(res, index) in response" class="last:pb-10">
         <div
           v-if="index % 2"
-          class="relative p-4 bg-white ml-[60%] justify-end rounded-lg w-5/12 flex items-center"
+          class="p-4 relative bg-white rounded-lg w-5/12 flex items-center"
         >
           <p>{{ res }}</p>
           <img
@@ -42,7 +50,7 @@ const handleEnter = async (input: string) => {
         </div>
         <div
           v-else
-          class="p-4 relative bg-white rounded-lg w-5/12 flex items-center"
+          class="relative p-4 bg-white ml-[60%] justify-end rounded-lg w-5/12 flex items-center"
         >
           <p>{{ res }}</p>
         </div>
