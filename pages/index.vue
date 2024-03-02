@@ -13,7 +13,7 @@ const addImg = ref(false);
     />
     <div class="flex items-center">
       <div class="boom w-full h-full">
-        <p class="text-[30px] pb-11 font-bold">ciao Retexer</p>
+        <p class="text-[30px] pb-11 font-bold">ciao Retexer,</p>
         <p class="text-[44px] font-bold">Sei nel luogo ideale per lavorare,</p>
         <p class="text-[44px] font-bold">imparare e divertirti</p>
         <div class="flex gap-x-[34px] pt-16">
