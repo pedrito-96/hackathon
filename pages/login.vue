@@ -7,11 +7,9 @@ const addImg = ref(false);
 </script>
 <template>
   <div class="flex justify-start items-center h-screen w-screen p-[10%]">
-    <img
-      src="../Icons/reask.svg"
-      class="absolute top-[10%] left-[10%]"
-      @click="navigateTo('/')"
-    />
+    <a href="/">
+      <img src="../Icons/reask.svg" class="absolute top-[10%] left-[10%] z-50"
+    /></a>
     <div class="flex justify-center items-center">
       <div
         class="relative w-[400px] h-[300px] flex flex-col justify-center items-center gap-4 z-10"
