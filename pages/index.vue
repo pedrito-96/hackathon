@@ -7,7 +7,10 @@ const addImg = ref(false);
 </script>
 <template>
   <div class="flex justify-center items-center h-screen w-screen p-[10%]">
-    <img src="../Icons/reask.svg" class="absolute top-[10%] left-[10%]" />
+    <img
+      src="../Icons/retex.png"
+      class="w-[61px] h-[73px] absolute top-[10%] left-[10%]"
+    />
     <div class="flex items-center">
       <div class="boom w-full h-full">
         <p class="text-[30px] pb-11 font-bold">ciao Retexer,</p>

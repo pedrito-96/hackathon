@@ -21,7 +21,10 @@ const handleEnter = async (input: string) => {
 <template>
   <div class="boom flex justify-center items-center h-screen w-screen p-[10%]">
     <a href="/">
-      <img src="../Icons/reask.svg" class="absolute top-[10%] left-[10%]" />
+      <img
+        src="../Icons/retex.png"
+        class="absolute top-[7%] left-[7%] w-[61px] h-[73px] z-50"
+      />
     </a>
     <div
       class="flex flex-col bg-black/10 rounded-lg w-full h-full gap-4 px-8 pt-8 pb-10 overflow-auto"

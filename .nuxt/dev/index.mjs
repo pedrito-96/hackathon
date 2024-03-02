@@ -744,9 +744,11 @@ const errorHandler = (async function errorhandler(error, event) {
   return send(event, html);
 });
 
+const _lazy_2rwzNl = () => Promise.resolve().then(function () { return chat_post$1; });
 const _lazy_Q9TuVD = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
+  { route: '/api/chat', handler: _lazy_2rwzNl, lazy: true, middleware: false, method: "post" },
   { route: '/__nuxt_error', handler: _lazy_Q9TuVD, lazy: true, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_Q9TuVD, lazy: true, middleware: false, method: undefined }
 ];
@@ -956,6 +958,77 @@ const template$1 = _template;
 const errorDev = /*#__PURE__*/Object.freeze({
   __proto__: null,
   template: template$1
+});
+
+const chat_post = defineEventHandler(async (event) => {
+  const body = await readBody(event);
+  const text = body.text;
+  await $fetch(
+    `https://api.openai.com/v1/threads/thread_hjypMLPlLhV8LGJmCE5y3rjH/messages`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer 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 `,
+        "OpenAI-Beta": "assistants=v1"
+      },
+      body: {
+        role: "user",
+        content: text
+      }
+    }
+  );
+  const runMessage = await $fetch(
+    `https://api.openai.com/v1/threads/thread_hjypMLPlLhV8LGJmCE5y3rjH/runs`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer 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 `,
+        "OpenAI-Beta": "assistants=v1"
+      },
+      body: {
+        assistant_id: "asst_TnZhAQ4lBnBODtjVYcKLDg9I"
+      }
+    }
+  );
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("aspetto");
+      resolve(null);
+    }, 5e3);
+  });
+  const getStatus = await $fetch(
+    `https://api.openai.com/v1/threads/thread_hjypMLPlLhV8LGJmCE5y3rjH/runs/${runMessage.id}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer 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 `,
+        "OpenAI-Beta": "assistants=v1"
+      }
+    }
+  );
+  if (getStatus.status === "completed") {
+    console.log("complete");
+    const response = await $fetch(
+      `https://api.openai.com/v1/threads/thread_hjypMLPlLhV8LGJmCE5y3rjH/messages`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer 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 `,
+          "OpenAI-Beta": "assistants=v1"
+        }
+      }
+    );
+    return { response };
+  }
+});
+
+const chat_post$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  default: chat_post
 });
 
 const Vue3 = version.startsWith("3");
