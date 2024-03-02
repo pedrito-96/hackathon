@@ -5,7 +5,7 @@ const isOpen = ref(false);
 </script>
 
 <template>
-  <Disclosure>
+  <Disclosure as="div">
     <DisclosureButton
       class="text-black text-[24px] py-4 hover:text-[32px] hover:font-bold"
       @click="isOpen = !isOpen"
