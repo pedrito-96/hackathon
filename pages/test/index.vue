@@ -1,16 +1,25 @@
 <script setup lang="ts">
-const lista = [
-  { title: "tile", content: "/placeholderImage.png" },
-  { title: "tile", content: "/placeholdercontent.png" },
-  { title: "tile", content: "/placeholdercontent.png" },
-  { title: "tile", content: "/placeholdercontent.png" },
-  { title: "tile", content: "/placeholdercontent.png" },
-  { title: "tile", content: "/placeholdercontent.png" },
-  { title: "tile", content: "/placeholdercontent.png" },
-  { title: "tile", content: "/placeholderImage.png" },
-];
+const response = ref([]);
+const answer = ref([]);
+const handleEnter = async (value: string) => {
+  const res = await $fetch("/api/chat", {
+    method: "POST",
+    body: {
+      text: value,
+    },
+  });
+
+  response.value = res.response.data
+    .toReversed()
+    .map((i) => i.content[0].text.value);
+};
 </script>
 
 <template>
-  <OrganismsAccordionList :list="lista" />
+  <MoleculesTextInput
+    placeholder="scrivi"
+    @on-enter="handleEnter"
+    name="text"
+  />
+  <pre>{{ response }}</pre>
 </template>
