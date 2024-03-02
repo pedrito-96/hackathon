@@ -7,12 +7,12 @@ export default defineEventHandler(async (event) => {
 
   // 2a chiamata post
   const addMessage = await $fetch(
-    `https://api.openai.com/v1/threads/thread_DGyOrs6Vl1GMGruJpLBxQR6M/messages`,
+    `https://api.openai.com/v1/threads/thread_REQcP42bEdd1HAWUenj2StYI/messages`,
     {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer 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`,
         "OpenAI-Beta": "assistants=v1",
       },
       body: {
@@ -22,12 +22,12 @@ export default defineEventHandler(async (event) => {
     }
   );
   const runMessage = await $fetch(
-    `https://api.openai.com/v1/threads/thread_DGyOrs6Vl1GMGruJpLBxQR6M/runs`,
+    `https://api.openai.com/v1/threads/thread_REQcP42bEdd1HAWUenj2StYI/runs`,
     {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer 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`,
         "OpenAI-Beta": "assistants=v1",
       },
       body: {
@@ -43,12 +43,12 @@ export default defineEventHandler(async (event) => {
   });
 
   const getStatus = await $fetch(
-    `https://api.openai.com/v1/threads/thread_DGyOrs6Vl1GMGruJpLBxQR6M/runs/${runMessage.id}`,
+    `https://api.openai.com/v1/threads/thread_REQcP42bEdd1HAWUenj2StYI/runs/${runMessage.id}`,
     {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer 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`,
         "OpenAI-Beta": "assistants=v1",
       },
     }
@@ -57,12 +57,12 @@ export default defineEventHandler(async (event) => {
   if (getStatus.status === "completed") {
     console.log("complete");
     const response = await $fetch(
-      `https://api.openai.com/v1/threads/thread_DGyOrs6Vl1GMGruJpLBxQR6M/messages`,
+      `https://api.openai.com/v1/threads/thread_REQcP42bEdd1HAWUenj2StYI/messages`,
       {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer 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`,
+          Authorization: `Bearer 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`,
           "OpenAI-Beta": "assistants=v1",
         },
       }
