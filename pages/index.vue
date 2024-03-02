@@ -19,12 +19,13 @@ const addImg = ref(false);
           >
             sei nuovo?
           </button>
-          <button
-            class="uppercase px-4 py-[9px] text-[16px] bg-black text-white"
-            @click="navigateTo('/login')"
+          <a href="/login">
+            <button
+              class="uppercase px-4 py-[9px] text-[16px] bg-black text-white"
+            >
+              sei già dipendente?
+            </button></a
           >
-            sei già dipendente?
-          </button>
         </div>
         <a href="/chat-with-assistant">
           <button
