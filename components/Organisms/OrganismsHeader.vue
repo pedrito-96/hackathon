@@ -15,7 +15,7 @@ defineProps<OrganismsHeaderProps>();
             Ciao Giovanni
           </p></a
         >
-        <img src="/icons/lombiCircle.png" class="w-14 h-14" />
+        <img src="/Icons/lombiCircle.png" class="w-14 h-14" />
       </div>
     </div>
     <div v-if="isSearchBar" class="px-[15%]">

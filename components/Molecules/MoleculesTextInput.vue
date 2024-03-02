@@ -36,7 +36,7 @@ const handleOnEnter = (e: Event) => {
     }"
   >
     <template #prefixIcon>
-      <img v-if="icon" src="/icons/Search.svg" class="h-[34px] w-[34px]" />
+      <img v-if="icon" src="/Icons/Search.svg" class="h-[34px] w-[34px]" />
     </template>
   </FormKit>
 </template>

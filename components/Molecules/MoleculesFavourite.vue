@@ -7,8 +7,8 @@ withDefaults(defineProps<FavProps>(), {
 
 <template>
   <div class="px-4 py-3 flex gap-3 background-color w-fit rounded-[100px]">
-    <img src="/icons/Star.svg" class="h-6 w-6" v-if="!isClick" />
-    <img src="/icons/StarFill.svg" class="h-6 w-6" v-else />
+    <img src="/Icons/Star.svg" class="h-6 w-6" v-if="!isClick" />
+    <img src="/Icons/StarFill.svg" class="h-6 w-6" v-else />
     <p class="font-bold text-[16px] text-black">I miei preferiti</p>
   </div>
 </template>
