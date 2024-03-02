@@ -4,8 +4,8 @@ defineProps<CardProps>();
 </script>
 
 <template>
-  <div class="container relative rounded-xl w-[340px]">
+  <div class="relative rounded-xl w-[340px]">
     <img :src="image" class="relative" />
-    <p class="absolute bottom-[13px] text-center w-full">{{ title }}</p>
+    <p class="absolute bottom-1/2 text-center w-full text-white">{{ title }}</p>
   </div>
 </template>
