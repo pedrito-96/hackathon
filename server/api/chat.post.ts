@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer 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 `,
         "OpenAI-Beta": "assistants=v1",
       },
       body: {
@@ -27,7 +27,7 @@ export default defineEventHandler(async (event) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer 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 `,
         "OpenAI-Beta": "assistants=v1",
       },
       body: {
@@ -48,7 +48,7 @@ export default defineEventHandler(async (event) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer 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 `,
         "OpenAI-Beta": "assistants=v1",
       },
     }
@@ -62,7 +62,7 @@ export default defineEventHandler(async (event) => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer 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`,
+          Authorization: `Bearer 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 `,
           "OpenAI-Beta": "assistants=v1",
         },
       }
