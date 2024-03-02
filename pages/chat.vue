@@ -5,7 +5,6 @@ definePageMeta({
 const response = ref([]);
 const isLoading = ref(false);
 const handleEnter = async (input: string) => {
-  console.log(isLoading.value);
   isLoading.value = true;
   const res = await $fetch("/api/chat", {
     method: "POST",
