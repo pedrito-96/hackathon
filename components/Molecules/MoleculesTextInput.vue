@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import type { TextInputProps } from "./MoleculesTextInput.props";
-const props = defineProps<TextInputProps>();
+const props = withDefaults(defineProps<TextInputProps>(), {
+  icon: true,
+});
 
 const emit = defineEmits<{
   (e: "onInput", value: string): void;
@@ -20,7 +22,7 @@ const handleOnEnter = (e: Event) => {
 
 <template>
   <FormKit
-    type="text"
+    :type="type"
     :model-value="value"
     :name="name"
     :label="label"
@@ -28,14 +30,13 @@ const handleOnEnter = (e: Event) => {
     @input="(value) => handleInput(value)"
     @keydown.enter="(value) => handleOnEnter(value)"
     :classes="{
-      inner: 'bg-[#CCCCCC] rounded-[100px] py-4 px-5 flex gap-[10px]',
+      outer: 'w-full',
+      inner: 'bg-white rounded-[100px] py-4 px-5 flex gap-[10px]',
       input: 'text-[black] bg-inherit focus:outline-none',
     }"
   >
     <template #prefixIcon>
-      <slot name="iconSx">
-        <img src="/icons/Search.svg" class="h-[34px] w-[34px]" />
-      </slot>
+      <img v-if="icon" src="/icons/Search.svg" class="h-[34px] w-[34px]" />
     </template>
   </FormKit>
 </template>

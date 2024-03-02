@@ -1,8 +1,8 @@
 export type TextInputProps = {
   name: string;
-  label: string;
+  label?: string;
   placeholder?: string;
   value?: string;
-  noPrefixIcon?: boolean;
-  noSuffixIcon?: boolean;
+  type?: string;
+  icon?: boolean;
 };

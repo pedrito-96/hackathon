@@ -1,7 +1,56 @@
-<template>
-  <div class="max-w-md space-y-2">
-    <Disclosure title="Lorem ipsum dolor sit amet" text="Dolore officia ab impedit iste non illo itaque quos nesciunt modi adipisci, odit aperiam nemo, est tenetur reiciendis, maiores repellendus." />
+<script setup lang="ts">
+definePageMeta({
+  layout: false,
+});
 
-    <Card title="Is your dog older than you?" />
+const addImg = ref(false);
+</script>
+<template>
+  <div class="flex justify-center items-center h-screen w-screen p-[10%]">
+    <img src="../Icons/reask.svg" class="absolute top-[10%] left-[10%]" />
+    <div class="flex items-center">
+      <div class="boom w-full h-full">
+        <p class="text-[30px] pb-11 font-bold">ciao Retexer,</p>
+        <p class="text-[44px] font-bold">Sei nel luogo ideale per lavorare,</p>
+        <p class="text-[44px] font-bold">imparare e divertirti</p>
+        <div class="flex gap-x-[34px] pt-16">
+          <button
+            class="uppercase px-4 py-[9px] text-[16px] bg-black text-white"
+          >
+            sei nuovo?
+          </button>
+          <button
+            class="uppercase px-4 py-[9px] text-[16px] bg-black text-white"
+            @click="navigateTo('/login')"
+          >
+            sei già dipendente?
+          </button>
+        </div>
+        <button
+          class="absolute bottom-[10%] right-0 px-6 py-8 text-[16px] bg-[#48A8D4] text-white"
+        >
+          Ti aiutiamo noi ... (Live chat)
+        </button>
+      </div>
+      <!-- <div>
+        <img
+          v-if="addImg"
+          src="../Icons/lombiCircle.png"
+          @click="() => (addImg = false)"
+        />
+        <img v-else src="../Icons/addImg.png" @click="() => (addImg = true)" />
+      </div> -->
+    </div>
   </div>
 </template>
+<style lang="scss">
+.boom {
+  /* Background pattern from Toptal Subtle Patterns */
+  background-image: url("/public/fade.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  width: 100%;
+  height: 100%;
+}
+</style>
