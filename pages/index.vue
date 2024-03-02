@@ -14,11 +14,13 @@ const addImg = ref(false);
         <p class="text-[44px] font-bold">Sei nel luogo ideale per lavorare,</p>
         <p class="text-[44px] font-bold">imparare e divertirti</p>
         <div class="flex gap-x-[34px] pt-16">
-          <button
-            class="uppercase px-4 py-[9px] text-[16px] bg-black text-white"
+          <a href="/chat">
+            <button
+              class="uppercase px-4 py-[9px] text-[16px] bg-black text-white"
+            >
+              sei nuovo?
+            </button></a
           >
-            sei nuovo?
-          </button>
           <a href="/login">
             <button
               class="uppercase px-4 py-[9px] text-[16px] bg-black text-white"
@@ -27,7 +29,7 @@ const addImg = ref(false);
             </button></a
           >
         </div>
-        <a href="/chat-with-assistant">
+        <a href="/chat">
           <button
             class="absolute bottom-[10%] right-0 px-6 py-8 text-[16px] bg-[#48A8D4] text-white"
           >
