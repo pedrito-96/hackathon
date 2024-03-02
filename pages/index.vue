@@ -1,10 +1,3 @@
-<script setup lang="ts">
-definePageMeta({
-  layout: false,
-});
-
-const addImg = ref(false);
-</script>
 <template>
   <div class="flex justify-center items-center h-screen w-screen p-[10%]">
     <img
@@ -45,25 +38,3 @@ const addImg = ref(false);
     </div>
   </div>
 </template>
-<style lang="scss">
-.boom {
-  /* Background pattern from Toptal Subtle Patterns */
-  background-image: url("/assets/fade.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: left;
-  width: 100%;
-  height: 100%;
-}
-
-.circle {
-  background: black;
-  width: 275px;
-  height: 275px;
-  padding: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-</style>

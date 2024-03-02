@@ -1,1 +1,36 @@
 node_modules
+*.log
+.nuxt
+nuxt.d.ts
+.output
+.env
+!packages/**/.env
+*-lock.json
+framework
+dist
+.DS_Store
+.netlify
+
+# Yarn
+.yarn/cache
+.yarn/*state*
+
+# Local History
+.history
+
+# VSCode
+#.vscode/
+
+# Storybook build
+storybook-static/
+graphql.config.ts
+
+components.d.ts
+packages/*/auto-imports.d.ts
+
+.unlighthouse
+
+# remove _headers from site
+packages/site/public/_headers
+packages/site/static/data
+packages/site/static/data/*
