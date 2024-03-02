@@ -3,7 +3,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { mkdirSync } from 'node:fs';
 import { parentPort, threadId } from 'node:worker_threads';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, isEvent, createEvent, fetchWithEvent, getRequestHeader, eventHandler, setHeaders, sendRedirect, proxyRequest, createError, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHeaders, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getRouterParam, getQuery as getQuery$1, readBody, getResponseStatusText } from 'file:///Users/pietrostivanello/Documents/GitHub/hackathon/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, isEvent, createEvent, fetchWithEvent, getRequestHeader, eventHandler, setHeaders, sendRedirect, proxyRequest, createError, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHeaders, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getRouterParam, getQuery as getQuery$1, readBody, getResponseStatusText } from 'file:///Users/pietrostivanello/Documents/GitHub/hackathon/node_modules/h3/dist/index.mjs';
 import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file:///Users/pietrostivanello/Documents/GitHub/hackathon/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import { stringify, uneval } from 'file:///Users/pietrostivanello/Documents/GitHub/hackathon/node_modules/devalue/index.js';
 import { parseURL, withoutBase, joinURL, getQuery, withQuery } from 'file:///Users/pietrostivanello/Documents/GitHub/hackathon/node_modules/ufo/dist/index.mjs';
@@ -20,6 +20,9 @@ import { hash } from 'file:///Users/pietrostivanello/Documents/GitHub/hackathon/
 import { createStorage, prefixStorage } from 'file:///Users/pietrostivanello/Documents/GitHub/hackathon/node_modules/unstorage/dist/index.mjs';
 import unstorage_47drivers_47fs from 'file:///Users/pietrostivanello/Documents/GitHub/hackathon/node_modules/unstorage/drivers/fs.mjs';
 import { toRouteMatcher, createRouter } from 'file:///Users/pietrostivanello/Documents/GitHub/hackathon/node_modules/radix3/dist/index.mjs';
+import { fileURLToPath } from 'node:url';
+import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file:///Users/pietrostivanello/Documents/GitHub/hackathon/node_modules/ipx/dist/index.mjs';
+import { isAbsolute } from 'file:///Users/pietrostivanello/Documents/GitHub/hackathon/node_modules/pathe/dist/index.mjs';
 import { version, unref } from 'file:///Users/pietrostivanello/Documents/GitHub/hackathon/node_modules/vue/index.mjs';
 import { createServerHead as createServerHead$1 } from 'file:///Users/pietrostivanello/Documents/GitHub/hackathon/node_modules/unhead/dist/index.mjs';
 import { defineHeadPlugin } from 'file:///Users/pietrostivanello/Documents/GitHub/hackathon/node_modules/@unhead/shared/dist/index.mjs';
@@ -98,7 +101,19 @@ const _inlineRuntimeConfig = {
       }
     }
   },
-  "public": {}
+  "public": {},
+  "ipx": {
+    "baseURL": "/_ipx",
+    "alias": {},
+    "fs": {
+      "dir": [
+        "/Users/pietrostivanello/Documents/GitHub/hackathon/public"
+      ]
+    },
+    "http": {
+      "domains": []
+    }
+  }
 };
 const envOptions = {
   prefix: "NITRO_",
@@ -744,10 +759,41 @@ const errorHandler = (async function errorhandler(error, event) {
   return send(event, html);
 });
 
+function buildAssetsDir() {
+  return useRuntimeConfig().app.buildAssetsDir;
+}
+function buildAssetsURL(...path) {
+  return joinURL(publicAssetsURL(), buildAssetsDir(), ...path);
+}
+function publicAssetsURL(...path) {
+  const app = useRuntimeConfig().app;
+  const publicBase = app.cdnURL || app.baseURL;
+  return path.length ? joinURL(publicBase, ...path) : publicBase;
+}
+
+const _exe9nR = lazyEventHandler(() => {
+  const opts = useRuntimeConfig().ipx || {};
+  const fsDir = opts?.fs?.dir ? (Array.isArray(opts.fs.dir) ? opts.fs.dir : [opts.fs.dir]).map((dir) => isAbsolute(dir) ? dir : fileURLToPath(new URL(dir, globalThis._importMeta_.url))) : void 0;
+  const fsStorage = opts.fs?.dir ? ipxFSStorage({ ...opts.fs, dir: fsDir }) : void 0;
+  const httpStorage = opts.http?.domains ? ipxHttpStorage({ ...opts.http }) : void 0;
+  if (!fsStorage && !httpStorage) {
+    throw new Error("IPX storage is not configured!");
+  }
+  const ipxOptions = {
+    ...opts,
+    storage: fsStorage || httpStorage,
+    httpStorage
+  };
+  const ipx = createIPX(ipxOptions);
+  const ipxHandler = createIPXH3Handler(ipx);
+  return useBase(opts.baseURL, ipxHandler);
+});
+
 const _lazy_Q9TuVD = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
   { route: '/__nuxt_error', handler: _lazy_Q9TuVD, lazy: true, middleware: false, method: undefined },
+  { route: '/_ipx/**', handler: _exe9nR, lazy: false, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_Q9TuVD, lazy: true, middleware: false, method: undefined }
 ];
 
@@ -1019,18 +1065,6 @@ const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initi
 const appRootId = "__nuxt";
 
 const appRootTag = "div";
-
-function buildAssetsDir() {
-  return useRuntimeConfig().app.buildAssetsDir;
-}
-function buildAssetsURL(...path) {
-  return joinURL(publicAssetsURL(), buildAssetsDir(), ...path);
-}
-function publicAssetsURL(...path) {
-  const app = useRuntimeConfig().app;
-  const publicBase = app.cdnURL || app.baseURL;
-  return path.length ? joinURL(publicBase, ...path) : publicBase;
-}
 
 globalThis.__buildAssetsURL = buildAssetsURL;
 globalThis.__publicAssetsURL = publicAssetsURL;

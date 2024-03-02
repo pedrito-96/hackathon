@@ -13,7 +13,9 @@
     "strict": true,
     "noImplicitThis": true,
     "esModuleInterop": true,
-    "types": [],
+    "types": [
+      "unplugin-icons/types/vue"
+    ],
     "verbatimModuleSyntax": true,
     "allowJs": true,
     "noEmit": true,
@@ -65,6 +67,12 @@
       "vue-demi": [
         "../node_modules/nuxt/dist/app/compat/vue-demi"
       ],
+      "#image": [
+        "../node_modules/@nuxt/image/dist/runtime"
+      ],
+      "#image/*": [
+        "../node_modules/@nuxt/image/dist/runtime/*"
+      ],
       "#vue-router": [
         "./vue-router-stub"
       ],
@@ -90,7 +98,8 @@
     "../node_modules/@vueuse/nuxt/runtime",
     "../node_modules/nuxt-lodash/runtime",
     "../node_modules/nuxt-headlessui/runtime",
-    "../node_modules/nuxt-icons/runtime",
+    "../../../../../pietrostiva/runtime",
+    "../node_modules/@nuxt/image/runtime",
     "../node_modules/@nuxt/devtools/runtime",
     "../node_modules/@nuxt/telemetry/runtime",
     ".."
@@ -103,7 +112,8 @@
     "../node_modules/@vueuse/nuxt/runtime/server",
     "../node_modules/nuxt-lodash/runtime/server",
     "../node_modules/nuxt-headlessui/runtime/server",
-    "../node_modules/nuxt-icons/runtime/server",
+    "../../../../../pietrostiva/runtime/server",
+    "../node_modules/@nuxt/image/runtime/server",
     "../node_modules/@nuxt/devtools/runtime/server",
     "../node_modules/@nuxt/telemetry/runtime/server",
     "../dist",
