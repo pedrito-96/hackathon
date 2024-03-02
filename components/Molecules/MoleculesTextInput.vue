@@ -10,12 +10,10 @@ const emit = defineEmits<{
 }>();
 
 const handleInput = (value: string) => {
-  console.log("emit", value);
   emit("onInput", value);
 };
 const handleOnEnter = (e: Event) => {
   const event = e.target as HTMLInputElement;
-  console.log("event", event.value);
   emit("onEnter", event.value);
 };
 </script>
