@@ -8,17 +8,17 @@ const message = ref("");
 
 const first = ref("");
 const firstStatus = ref(false);
-const firstAnswer = ref("First answer");
+const firstAnswer = ref("Ma come non lo sai?! Adriana Russo!");
 const firstAnswerStatus = ref(false);
 
 const second = ref("");
 const secondStatus = ref(false);
-const secondAnswer = ref("Second answer");
+const secondAnswer = ref("Digital Retex (atoms) a Milano");
 const secondAnswerStatus = ref(false);
 
 const third = ref("");
 const thirdStatus = ref(false);
-const thirdAnswer = ref("Third answer");
+const thirdAnswer = ref("Di nulla!");
 const thirdAnswerStatus = ref(false);
 
 const addMessage = () => {
@@ -61,9 +61,13 @@ const answer = ref("dasoidjasodijass");
       class="flex flex-col bg-black/10 rounded-lg w-full h-full gap-4 p-8 overflow-auto"
     >
       <div
-        class="w-5/12 ml-[60%] flex justify-end items-center p-4 bg-white rounded-lg"
+        class="relative w-5/12 ml-[60%] flex justify-end items-center p-4 bg-white rounded-lg"
       >
-        <p>Ciao</p>
+        <p>Ciao Retexer!</p>
+        <img
+          src="/Icons/assistant.png"
+          class="absolute -top-2 -left-2 h-10 w-10"
+        />
       </div>
 
       <div
@@ -75,9 +79,13 @@ const answer = ref("dasoidjasodijass");
 
       <div
         v-if="firstAnswerStatus"
-        class="p-4 bg-white ml-[60%] justify-end rounded-lg w-5/12 flex items-center"
+        class="relative p-4 bg-white ml-[60%] justify-end rounded-lg w-5/12 flex items-center"
       >
         <p>{{ firstAnswer }}</p>
+        <img
+          src="/Icons/assistant.png"
+          class="absolute -top-2 -left-2 h-10 w-10"
+        />
       </div>
       <div
         v-if="secondStatus"
@@ -88,9 +96,13 @@ const answer = ref("dasoidjasodijass");
 
       <div
         v-if="secondAnswerStatus"
-        class="p-4 bg-white ml-[60%] justify-end rounded-lg w-5/12 flex items-center"
+        class="relative p-4 bg-white ml-[60%] justify-end rounded-lg w-5/12 flex items-center"
       >
         <p>{{ secondAnswer }}</p>
+        <img
+          src="/Icons/assistant.png"
+          class="absolute -top-2 -left-2 h-10 w-10"
+        />
       </div>
       <div
         v-if="thirdStatus"
@@ -101,9 +113,13 @@ const answer = ref("dasoidjasodijass");
 
       <div
         v-if="thirdAnswerStatus"
-        class="p-4 bg-white ml-[60%] justify-end rounded-lg w-5/12 flex items-center"
+        class="relative p-4 bg-white ml-[60%] justify-end rounded-lg w-5/12 flex items-center"
       >
         <p>{{ thirdAnswer }}</p>
+        <img
+          src="/Icons/assistant.png"
+          class="absolute -top-2 -left-2 h-10 w-10"
+        />
       </div>
     </div>
     <div
